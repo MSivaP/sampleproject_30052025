@@ -1,0 +1,11 @@
+- name: install the httpd package
+  hosts: all
+  tasks:
+    - name: install httpd
+      yum:
+        name: httpd
+        state: present
+    - name: httpd service restart 
+      systemd:
+        name: httpd
+        state: restarted
